@@ -10,9 +10,15 @@ class WebpageForm(forms.ModelForm):
     class Meta:
         model=Webpage
         fields='__all__'
+        help_texts={'topic_name':'should not be integers','name':'only Alphabets'}
+        fields=['topic_name','name','url']
+        #exclude=['name']
+        labels={'topic_name':'TN','name':'N'}
+        # widgets={'url':forms.PasswordInput,'name':forms.Textarea}
 
 
 class AccessRecordsForm(forms.ModelForm):
     class Meta:
         model=AccessRecords
         fields='__all__'
+        
